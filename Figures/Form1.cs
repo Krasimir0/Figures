@@ -27,16 +27,27 @@ namespace Figures
                 int width = rdm.Next(0, 550);
                 int height = rdm.Next(0, 350);
                 Thread.Sleep(3000);
-            }
+                Graphics t = this.CreateGraphics();
+                Pen pen = new Pen(Brushes.Red);
+                int sizeHeight = height + rdm.Next(50, 50);
+                int sizeWidth = width + rdm.Next(50, 50);
+                Point[] TrianglePoints =
+                {
+                    new Point(Math.Max(0, width - rdm.Next(50, 50)), height),
+                    new Point(sizeWidth, sizeHeight),
+                    new Point(width, height)    
+                };
+                t.DrawPolygon(pen, TrianglePoints);
+            } 
         }
 
-        private void btnTriangle_Click(object sender, EventArgs e)
+        public void btnTriangle_Click(object sender, EventArgs e)
         {
             Thread thTriangle = new Thread(threadTriangle);
             thTriangle.Start();
         }
 
-        public void threadRectangle()
+        private void threadRectangle()
         {
             for (int i = 0; i < 1000; i++)
             {
