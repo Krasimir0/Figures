@@ -28,7 +28,7 @@ namespace Figures
                 int height = rdm.Next(0, 350);
                 Thread.Sleep(3000);
                 Graphics t = this.CreateGraphics();
-                Pen pen = new Pen(Brushes.Red);
+                Pen pen = new Pen(Brushes.Orange);
                 int sizeHeight = height + rdm.Next(50, 50);
                 int sizeWidth = width + rdm.Next(50, 50);
                 Point[] TrianglePoints =
